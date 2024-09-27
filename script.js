@@ -1,0 +1,222 @@
+const tags = [
+    { description: 'Este tag se utiliza para definir un enlace.', tag: 'a' },
+    { description: 'Este tag se utiliza para definir una abreviatura o acrónimo.', tag: 'abbr' },
+    { description: 'Este tag se utiliza para definir una dirección.', tag: 'address' },
+    { description: 'Este tag se utiliza para definir una parte de una aplicación.', tag: 'app' },
+    { description: 'Este tag se utiliza para definir una sección de un artículo.', tag: 'article' },
+    { description: 'Este tag se utiliza para definir contenido independiente o autocontenido.', tag: 'aside' },
+    { description: 'Este tag se utiliza para definir contenido en negrita.', tag: 'b' },
+    { description: 'Este tag se utiliza para definir una base para un enlace.', tag: 'base' },
+    { description: 'Este tag se utiliza para definir una sección de un biografía.', tag: 'bdi' },
+    { description: 'Este tag se utiliza para aislar una parte del texto que podría estar formateado en una dirección diferente.', tag: 'bdo' },
+    { description: 'Este tag se utiliza para definir un bloque de cita.', tag: 'blockquote' },
+    { description: 'Este tag se utiliza para definir el cuerpo de un documento.', tag: 'body' },
+    { description: 'Este tag se utiliza para definir un salto de línea.', tag: 'br' },
+    { description: 'Este tag se utiliza para definir un botón clicable.', tag: 'button' },
+    { description: 'Este tag se utiliza para definir un lienzo para gráficos.', tag: 'canvas' },
+    { description: 'Este tag se utiliza para definir una tabla de códigos.', tag: 'code' },
+    { description: 'Este tag se utiliza para definir una columna en una tabla.', tag: 'col' },
+    { description: 'Este tag se utiliza para agrupar elementos de estilo de columna en una tabla.', tag: 'colgroup' },
+    { description: 'Este tag se utiliza para definir una tabla de datos.', tag: 'data' },
+    { description: 'Este tag se utiliza para definir un título para un conjunto de opciones.', tag: 'datalist' },
+    { description: 'Este tag se utiliza para definir una descripción o definición.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una tabla de contenido.', tag: 'details' },
+    { description: 'Este tag se utiliza para definir una definición.', tag: 'dfn' },
+    { description: 'Este tag se utiliza para definir un cuadro de diálogo.', tag: 'dialog' },
+    { description: 'Este tag se utiliza para definir una sección de una página.', tag: 'div' },
+    { description: 'Este tag se utiliza para definir una lista de definiciones.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir un término o nombre.', tag: 'dt' },
+    { description: 'Este tag se utiliza para definir texto enfatizado.', tag: 'em' },
+    { description: 'Este tag se utiliza para definir una figura.', tag: 'figure' },
+    { description: 'Este tag se utiliza para definir una leyenda para una figura.', tag: 'figcaption' },
+    { description: 'Este tag se utiliza para definir un formulario.', tag: 'form' },
+    { description: 'Este tag se utiliza para definir un encabezado de primer nivel.', tag: 'h1' },
+    { description: 'Este tag se utiliza para definir un encabezado de segundo nivel.', tag: 'h2' },
+    { description: 'Este tag se utiliza para definir un encabezado de tercer nivel.', tag: 'h3' },
+    { description: 'Este tag se utiliza para definir un encabezado de cuarto nivel.', tag: 'h4' },
+    { description: 'Este tag se utiliza para definir un encabezado de quinto nivel.', tag: 'h5' },
+    { description: 'Este tag se utiliza para definir un encabezado de sexto nivel.', tag: 'h6' },
+    { description: 'Este tag se utiliza para definir el encabezado de un documento.', tag: 'head' },
+    { description: 'Este tag se utiliza para definir una sección con el contenido principal de la página.', tag: 'header' },
+    { description: 'Este tag se utiliza para definir el cuerpo de un documento HTML.', tag: 'html' },
+    { description: 'Este tag se utiliza para definir un marco de iFrame.', tag: 'iframe' },
+    { description: 'Este tag se utiliza para definir una imagen.', tag: 'img' },
+    { description: 'Este tag se utiliza para definir una entrada en un formulario.', tag: 'input' },
+    { description: 'Este tag se utiliza para definir texto en cursiva.', tag: 'i' },
+    { description: 'Este tag se utiliza para definir una etiqueta en un formulario.', tag: 'label' },
+    { description: 'Este tag se utiliza para definir un campo de entrada de clave.', tag: 'keygen' },
+    { description: 'Este tag se utiliza para definir un encabezado de navegación.', tag: 'nav' },
+    { description: 'Este tag se utiliza para definir una lista ordenada.', tag: 'ol' },
+    { description: 'Este tag se utiliza para definir una opción dentro de una lista de opciones.', tag: 'option' },
+    { description: 'Este tag se utiliza para definir una lista de opciones seleccionables.', tag: 'select' },
+    { description: 'Este tag se utiliza para definir una sección de un sitio web.', tag: 'section' },
+    { description: 'Este tag se utiliza para definir una lista no ordenada.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir un contenedor general.', tag: 'span' },
+    { description: 'Este tag se utiliza para definir texto fuerte.', tag: 'strong' },
+    { description: 'Este tag se utiliza para definir una tabla.', tag: 'table' },
+    { description: 'Este tag se utiliza para definir un pie de página en una tabla.', tag: 'tfoot' },
+    { description: 'Este tag se utiliza para definir un título para una tabla.', tag: 'th' },
+    { description: 'Este tag se utiliza para definir un encabezado de una tabla.', tag: 'thead' },
+    { description: 'Este tag se utiliza para definir una fila en una tabla.', tag: 'tr' },
+    { description: 'Este tag se utiliza para definir una celda de datos en una tabla.', tag: 'td' },
+    { description: 'Este tag se utiliza para definir una lista de texto con formato previo.', tag: 'pre' },
+    { description: 'Este tag se utiliza para definir un enlace de anclaje.', tag: 'link' },
+    { description: 'Este tag se utiliza para definir un recurso de script.', tag: 'script' },
+    { description: 'Este tag se utiliza para definir una sección de estilo.', tag: 'style' },
+    { description: 'Este tag se utiliza para definir un componente de sombra.', tag: 'shadow' },
+    { description: 'Este tag se utiliza para definir un contenedor SVG.', tag: 'svg' },
+    { description: 'Este tag se utiliza para definir una línea de texto.', tag: 'line' },
+    { description: 'Este tag se utiliza para definir un grupo de contenido.', tag: 'g' },
+    { description: 'Este tag se utiliza para definir un bloque de script.', tag: 'script' },
+    { description: 'Este tag se utiliza para definir una línea de texto en negrita.', tag: 'b' },
+    { description: 'Este tag se utiliza para definir una sección de formato HTML.', tag: 'fieldset' },
+    { description: 'Este tag se utiliza para definir una etiqueta de campo.', tag: 'legend' },
+    { description: 'Este tag se utiliza para definir una etiqueta de control.', tag: 'label' },
+    { description: 'Este tag se utiliza para definir una sección de selección.', tag: 'option' },
+    { description: 'Este tag se utiliza para definir una lista de selección.', tag: 'select' },
+    { description: 'Este tag se utiliza para definir una barra de progreso.', tag: 'progress' },
+    { description: 'Este tag se utiliza para definir una barra de rangos.', tag: 'range' },
+    { description: 'Este tag se utiliza para definir un conjunto de detalles.', tag: 'details' },
+    { description: 'Este tag se utiliza para definir un subtítulo de resumen.', tag: 'summary' },
+    { description: 'Este tag se utiliza para definir un contenedor de entrada.', tag: 'input' },
+    { description: 'Este tag se utiliza para definir un contenedor de menú.', tag: 'menu' },
+    { description: 'Este tag se utiliza para definir un contenedor de audio.', tag: 'audio' },
+    { description: 'Este tag se utiliza para definir un contenedor de vídeo.', tag: 'video' },
+    { description: 'Este tag se utiliza para definir un contenedor de texto.', tag: 'textarea' },
+    { description: 'Este tag se utiliza para definir una lista de datos.', tag: 'datalist' },
+    { description: 'Este tag se utiliza para definir un contenedor de datos.', tag: 'output' },
+    { description: 'Este tag se utiliza para definir un contenedor de mapas.', tag: 'map' },
+    { description: 'Este tag se utiliza para definir una lista de imágenes.', tag: 'figure' },
+    { description: 'Este tag se utiliza para definir un contenedor de gráficos.', tag: 'canvas' },
+    { description: 'Este tag se utiliza para definir una sección de gráficos vectoriales.', tag: 'svg' },
+    { description: 'Este tag se utiliza para definir un contenedor de leyenda.', tag: 'legend' },
+    { description: 'Este tag se utiliza para definir una sección de salida.', tag: 'output' },
+    { description: 'Este tag se utiliza para definir una tabla de cuadros.', tag: 'table' },
+    { description: 'Este tag se utiliza para definir un contenedor de opciones.', tag: 'optgroup' },
+    { description: 'Este tag se utiliza para definir una celda de datos.', tag: 'td' },
+    { description: 'Este tag se utiliza para definir una celda de encabezado.', tag: 'th' },
+    { description: 'Este tag se utiliza para definir un contenedor de texto.', tag: 'span' },
+    { description: 'Este tag se utiliza para definir una lista de definiciones.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir un término.', tag: 'dt' },
+    { description: 'Este tag se utiliza para definir una descripción.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir un contenedor de contenido independiente.', tag: 'aside' },
+    { description: 'Este tag se utiliza para definir una leyenda.', tag: 'caption' },
+    { description: 'Este tag se utiliza para definir un contenedor de estilo.', tag: 'style' },
+    { description: 'Este tag se utiliza para definir un contenedor de imágenes.', tag: 'picture' },
+    { description: 'Este tag se utiliza para definir una lista de definiciones.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de referencias.', tag: 'cite' },
+    { description: 'Este tag se utiliza para definir una lista de opciones.', tag: 'select' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros.', tag: 'li' },
+    { description: 'Este tag se utiliza para definir una tabla de datos.', tag: 'data' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de navegación.', tag: 'nav' },
+    { description: 'Este tag se utiliza para definir una tabla de contenido.', tag: 'summary' },
+    { description: 'Este tag se utiliza para definir una lista de resumen.', tag: 'summary' },
+    { description: 'Este tag se utiliza para definir una tabla de cuadros de resumen.', tag: 'summary' },
+    { description: 'Este tag se utiliza para definir una lista de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de definiciones de términos.', tag: 'dt' },
+    { description: 'Este tag se utiliza para definir una tabla de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de elementos.', tag: 'li' },
+    { description: 'Este tag se utiliza para definir una lista de elementos de texto.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros.', tag: 'ol' },
+    { description: 'Este tag se utiliza para definir una lista de elementos de texto.', tag: 'li' },
+    { description: 'Este tag se utiliza para definir una lista de elementos de datos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de definiciones.', tag: 'dt' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de elementos.', tag: 'li' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de texto.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de elementos de datos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de términos.', tag: 'dt' },
+    { description: 'Este tag se utiliza para definir una lista de términos de cuadros.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de elementos de texto.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros.', tag: 'li' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de resumen.', tag: 'summary' },
+    { description: 'Este tag se utiliza para definir una lista de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de términos de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de elementos.', tag: 'li' },
+    { description: 'Este tag se utiliza para definir una lista de términos de texto.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de términos de cuadros.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de texto.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de términos.', tag: 'dt' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de texto.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de cuadros.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros de datos de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros de datos de términos de cuadros de texto de cuadros.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos.', tag: 'dl' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de cuadros de datos.', tag: 'ul' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos.', tag: 'dd' },
+    { description: 'Este tag se utiliza para definir una lista de cuadros de términos de datos de cuadros de texto de términos de datos de cuadros de términos de texto de cuadros de datos de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de términos de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos de cuadros de texto de cuadros de datos de términos.', tag: 'dl' },
+];
+
+
+let currentTagIndex = 0;
+
+function loadTag() {
+    const container = document.querySelector('.container');
+    container.className = 'container neutral';
+    document.getElementById('description').innerText = tags[currentTagIndex].description;
+    document.getElementById('userInput').value = '';
+    document.getElementById('correctAnswer').innerText = '';
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        checkAnswer();
+    }
+}
+
+function checkAnswer() {
+    const userAnswer = document.getElementById('userInput').value.trim().toLowerCase();
+    const correctAnswer = tags[currentTagIndex].tag;
+    const container = document.querySelector('.container');
+    
+    if (userAnswer === correctAnswer) {
+        container.className = 'container correct';
+        setTimeout(() => {
+            currentTagIndex = (currentTagIndex + 1) % tags.length;
+            loadTag();
+        }, 2000);  // Carga la siguiente pregunta después de 2 segundos
+    } else {
+        container.className = 'container incorrect';
+        document.getElementById('correctAnswer').innerText = `La respuesta correcta es <${correctAnswer}>.`;
+        setTimeout(() => {
+            currentTagIndex = (currentTagIndex + 1) % tags.length;
+            loadTag();
+        }, 4000);  // Carga la siguiente pregunta después de 4 segundos
+    }
+}
+
+// Inicializa la primera pregunta
+window.onload = loadTag;
